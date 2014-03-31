@@ -6,7 +6,6 @@ Device Detective is a featherweight Node.js module which determines whether a us
 
 Like all UA sniffers, Device Detective relies on a handful of regular expressions to determine what sort of device has issued the HTTP request. Device Detective implements [MDN recommendations](https://developer.mozilla.org/en-US/docs/Browser_detection_using_the_user_agent) for detecting mobiles, and allows the developer to choose whether to use the distinction between tablets and smaller mobile devices, which is available via the UA header (it's not recommended for the general use case).
 
-=========
 ## Installation
 
 Simply ```cd``` to your project's root directory and issue the following command.
@@ -17,7 +16,7 @@ Include it in your project, wherever you please.
 ```js
 var deviceDetective = require("device-detective");
 ```
-=========
+
 ## Reference
 
 ### Getting User Agent Information
@@ -41,11 +40,13 @@ device = {
 }
 ```
 
-**_Nota bene:_** If ```detect``` doesn't encounter anything to identify the user agent, it will set ```desktop``` to ```true``` and the rest to ```false```. This may seem foolish, given that mobile devices will soon produce more web traffic than desktops (if they don't already), but setting ```mobile : true``` by default would lead developers to create request handlers that automatically elide content when the user agent is one of the thousands of web crawlers that can't be identified based on HTTP headers.
+**_Nota bene:_** If ```detect``` doesn't encounter anything to identify the user agent as crawler, text browser, or phone, it will set ```desktop``` to ```true``` irrespective of whether the user agent is also identified as a tablet. That is to say, the desktop and tablet categories will overlap depending upon whether the vendor put "mobi(le)" in the UA string or not. If not, the device should be treated as a desktop (according to MDN's advice).
+
+Defaulting to desktop in the general case may seem foolish, given that mobile devices will soon produce more web traffic than desktops (if they don't already), but setting ```mobile : true``` by default would lead developers to create request handlers that automatically elide content when the user agent is one of the thousands of web crawlers that can't be identified based on HTTP headers.
 
 ### Phone, Tablet & Mobile
 
-If device detective sets either the ```phone``` or ```tablet``` properties to ```true```, it will also set the ```mobile``` property to ```true```. Thus, you're free to treat phones and tablets alike without having to check both properties.
+Tablet does not entail mobile; that is, if a vendor chooses not to include a tag identifying the device/browser as mobile (for example, on a high-powered tablet-turned-laptop sort of device), it won't be---and shouldn't be---identified as a mobile device. So, while phone entails mobile, tablet does not. Consult the tablet property to determine whether the user agent is an iPad or an Android tablet (both register as "mobile" by the vendors).
 
 ## Partial Route Example
 
