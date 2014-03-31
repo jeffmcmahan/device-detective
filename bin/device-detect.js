@@ -50,7 +50,7 @@ var regexDetect = function ( userAgentHeader ) {
     var crawler = /(googlebot)|(mediapartners)|(adsbot)|(msnbot)|(bingbot)|(Yo(u)?daoBot)|(Ya)(andex|DirectBot)|(baiduspider)|(duckduckbot)|(slurp)|(blekkobot)|(scribdbot)|(asterias)|(DoCoMo)|(Sogou)|(ichiro)|(moget)|(NaverBot)|(MJ12bot)/i.test(userAgentHeader);
     var phone = /(mobi)/i.test( userAgentHeader );
     var tablet = /(tablet)|(iPad)/i.test( userAgentHeader );
-    var textBrowser = /(Lynx)|(ELinks)|(Links[ s]\()|(Net-Tamer)|(w3m)|/i.test( userAgentHeader );
+    var textBrowser = /(Lynx)|(ELinks)|(Links[ s]\()|(Net-Tamer)|(w3m)/i.test( userAgentHeader );
     
     if (!!crawler) {
         userAgentInfo.crawler = true;
