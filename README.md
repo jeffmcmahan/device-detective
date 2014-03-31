@@ -54,16 +54,12 @@ If device detective sets either the ```phone``` or ```tablet``` properties to ``
 In a hypothetical project's main.js, expressjs ```get``` request handlers match strings and pass them over to routes, as shown below.
 ```js
 var blogRouter = require( "./routes/blog" );
-  .
-  . // Whatever in here.
-  .
 app.get( "/blog", blogRouter.home );
 ```
 
-The above code invokes the blogRouter.home() function and implicitly passes three arguments (a request, a response and a next object, respectively). Passing the ```request``` object into ```detect()``` returns the user agent information object. See below.
+The above code invokes ```blogRouter.home()```, implicitly passing 3 parameters (a ```request```, a ```response``` and a ```next``` object, respectively). Passing the ```request``` object into ```detect()``` returns the user agent information object. Plausible source code for this, in ```/routes/blog.js```, is below.
 
 ```js
-
 var deviceDetector = require( "device-detector" );
 
 var home = function ( req, res, next ) {
