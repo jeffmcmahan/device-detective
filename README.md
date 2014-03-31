@@ -4,9 +4,7 @@
 
 Device Detective is a featherweight Node.js module which determines whether a user agent is a phone, tablet, desktop, text browser (*e.g.,* Lynx), or a search engine crawler (*e.g.,* GoogleBot, BingBot, Baiduspider, etc.). And it makes this info easy to get at.
 
-Like all UA sniffers, Device Detective relies on a handful of regular expressions to determine what sort of device has issued the HTTP request.
-
-**Chad Smith** built the two most complex regular expressions in use here, and has posted them for all the world to use over at http://detectmobilebrowsers.com. A lot of time went into that, so here's to you, Chad.
+Like all UA sniffers, Device Detective relies on a handful of regular expressions to determine what sort of device has issued the HTTP request. Device Detective implements [MDN recommendations](https://developer.mozilla.org/en-US/docs/Browser_detection_using_the_user_agent) for detecting mobiles, and allows the developer to choose whether to use the distinction between tablets and smaller mobile devices, which is available via the UA header (it's not recommended for the general use case).
 
 =========
 ## Installation
