@@ -57,22 +57,21 @@ var regexDetect = function ( userAgentHeader ) {
         return userAgentInfo;
     }
     
-    if (!!phone) {
-        userAgentInfo.phone = true;
-        return userAgentInfo;
-    }
-    
-    if (!!tablet) {
-        userAgentInfo.tablet = true;
-        return userAgentInfo;
-    }
-    
     if (!!textBrowser) {
         userAgentInfo.lynx = true;
         return userAgentInfo;
     }
     
-    userAgentInfo.desktop = true;
+    if (!!phone) {
+        userAgentInfo.phone = true;
+    } else {
+        userAgentInfo.desktop = true;
+    }
+    
+    if (!!tablet) {
+        userAgentInfo.tablet = true;
+    }
+    
     return userAgentInfo;
 };
 
