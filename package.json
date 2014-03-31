@@ -1,0 +1,28 @@
+{
+  "author": {
+    "name": "Jeff McMahan",
+    "email": "jeffrey.lee.mcmahan@gmail.com",
+    "url": "http://jeffmcmahan.info"
+  },
+  "name": "device-detective",
+  "description": "Easily determine whether a user agent is a phone, tablet, desktop, text browser, or search engine spider.",
+  "keywords" : ["device detection", "user agent detection", "UA sniff"],
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/jeffmcmahan/device-detective"
+  },
+  "bugs": {
+    "url": "https://github.com/jeffmcmahan/device-detective/issues",
+    "email" : "jeffrey.lee.mcmahan@gmail.com"
+  },
+  "main": "./lib/main",
+  "bin": {
+    "device-detect": "./bin/device-detect.js"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
