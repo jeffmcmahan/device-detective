@@ -71,4 +71,4 @@ function regexDetect(uaHeader) {
   return ua
 }
 
-exports.deviceDetect = deviceDetect
+module.exports = deviceDetect
