@@ -15,10 +15,7 @@
     "url": "https://github.com/jeffmcmahan/device-detective/issues",
     "email" : "jeffrey.lee.mcmahan@gmail.com"
   },
-  "main": "./lib/main",
-  "bin": {
-    "device-detect": "./bin/device-detect.js"
-  },
+  "main": "index.js",
   "dependencies": {},
   "devDependencies": {},
   "optionalDependencies": {},
