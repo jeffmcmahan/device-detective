@@ -7,7 +7,7 @@
   "name": "device-detective",
   "description": "Easily determine whether a user agent is a phone, tablet, desktop, text browser, or search engine spider.",
   "keywords" : ["device detection", "user agent detection", "UA sniff"],
-  "version": "0.3.0",
+  "version": "0.3.1",
   "repository": {
     "url": "https://github.com/jeffmcmahan/device-detective"
   },
